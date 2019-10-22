@@ -4,7 +4,7 @@
   "description": "Memory game app using ReactJS",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon server.js",
     "start": "node server.js"
   },
   "repository": {
@@ -23,6 +23,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mongoose": "^5.7.6",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "request": "^2.88.0"
   }
 }
