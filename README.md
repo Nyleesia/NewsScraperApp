@@ -1,2 +1,2 @@
-# clickyGame
-Memory game app using ReactJS
+# News Scraper
+News Scraper App using cherio, express, handlebars, mongo, mongoose and morgan.
