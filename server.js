@@ -5,10 +5,10 @@ const logger = require("morgan");
 const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
-const routes = require("./controller/controller.js");
-mongoose.Promise = Promise;
-
+const routes = require("./controller");
+const multer = require('multer');
 const PORT = process.env.PORT || 3000;
+console.log("server.js => got dependencies.");
 
 //Setup dependencies
 //Morgan
@@ -18,9 +18,11 @@ app.use(
     extended: false
   })
 );
+console.log("server.js => morgan setup successful.");
 
 // Set path to public folder
 app.use(express.static(process.cwd() + "/public"));
+console.log("server.js => path to static set.");
 
 // Add routes 
 app.use("/", routes);
@@ -28,6 +30,7 @@ app.use("/", routes);
 //Handlebars
 app.engine ("handlebars", exphbs ({ defaultLayout : "main"}));
 app.set("view engine", "handlebars");
+console.log("server.js => hbrs template engine set.");
 
 //Connect to server
 app.listen(PORT, () => {
@@ -36,7 +39,7 @@ app.listen(PORT, () => {
 
 // Connect to MongoDB
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news-scraper";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true , useUnifiedTopology: true }, );
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true , useUnifiedTopology: true } );
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {

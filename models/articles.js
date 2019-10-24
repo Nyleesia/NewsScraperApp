@@ -8,6 +8,15 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
+  img: 
+    { data: Buffer, 
+      type: String,
+      required: true
+  },
+  teaser:{
+    type: String,
+    required: true
+  },
   link: {
     type: String,
     required: true
