@@ -21,7 +21,7 @@ app.use(
 console.log("server.js => morgan setup successful.");
 
 // Set path to public folder
-app.use(express.static(process.cwd() + "/public"));
+app.use(express.static(__dirname + "/public"));
 console.log("server.js => path to static set.");
 
 // Add routes 

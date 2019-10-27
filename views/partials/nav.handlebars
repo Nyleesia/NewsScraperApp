@@ -1,54 +1,12 @@
 {{!-- Navbar partial --}}
-<nav>
-    <div class = "navbar">
-        <div class = "jumbotron"> 
-            <a class="navbar-item" href="/"> <h1> NPR Scraped</h1> </a>
-            <br>
-            <div class = "lead"><h2>All News. All Day.</h2></div>
-        <hr>
-        <br>
-            <button class = "btn btn-success" id = "scrape" href = "/scrape"> Scrape The Latest News</button>
-            <button class = "btn btn-warning" id = "clear" href = "/clear"> Clear Articles </button>
-            <button class = "btn btn-danger" id = "delete" href = "/deleteAll"> Delete Articles Collection</button>
-            <hr>
-        </div> 
-    </diV>
-</nav>
 
-<script>
-
- $("#scrape").click(function(){
-        $.ajax({
-            type: "GET",
-            url: "/scrape"
-        }).then( () => {
-            document.location.reload();
-        }).catch({
-            if (err){
-                console.log (err);
-            }
-        })
-    });
-
-
-    $("#clear").click(function(){
-        $("#allArticles").empty();
-
-    });
-
-    
-    $("#delete").click(function(){
-        $.ajax({
-            type: "GET",
-            url: "/deleteAll"
-        }).then( () => {
-            document.location.reload();
-        }).catch({
-            if (err){
-                console.log (err);
-            }
-        })
-    });
-
-   
-</script>
+    <nav>
+        <div class = "navbar navbar-fixed-top">
+                <span class="navbar-item"> <a class="navbar-item" href="/"> <h1> NPR Scraped:</h1> </a><h2>All News. All Day.</h2> </span>
+                <div class = "navButtons">
+                    <div class = "navButtons"><button class = "btn scrape" id = "scrape" href = "/scrape"> Scrape The Latest News</button></div>
+                    <div class = "navButtons"><button class = "btn clear"  id = "clear" href = "/clear"> Clear Articles </button></div>
+                    <div class = "navButtons"><button class = "btn delete" id = "delete" href = "/deleteAll"> Delete Articles Collection</button></div>
+                </div>
+        </diV>
+    </nav>

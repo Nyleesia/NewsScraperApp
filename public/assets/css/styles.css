@@ -1,25 +1,90 @@
-body { background-color: #F2F6D0 }
-#wrapper {
-  width: 960px;
+.container {
+  max-width: 960px;
+}
+
+body { 
+  margin-top: auto;
+}
+
+.navbar {
+  height: 200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5%;
+  margin-bottom: auto;
+  background-color: black;
+  opacity: 0.9;
+  display: flex; 
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: left;
 }
-#articles {
-  display: inline-block;
-  overflow: auto;
-  width: 60%;
-  height: 700px;
+
+.navbar-item{
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  color: dodgerblue;
+  margin: auto;
 }
-#notes {
+
+.navbar-item h1{
+  font-size: 80px;
+  opacity: 0.70;
+}
+.navbar-item h2{
+  color: crimson;
+  font-size: 60px;
+  opacity: 0.70;
+  margin-left: 15px;
+}
+
+.navButtons{
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px;
+  padding: 15px;
+  opacity: 0.80;
+}
+
+.btn{
+  color: white;
+  font-weight: bolder;
+  border: white solid 1px;
+}
+.navButtons .scrape{
+  background-color: dodgerblue;
+}
+.navButtons .clear{
+  background-color: black;
+}
+.navButtons .delete{
+  background-color: indianred;
+}
+
+#allArticles {
+  border: lightblue 0.05px solid;
+  border-top: 0px;
+  border-bottom: 0px;
+  padding: 20px;
+  width: 90%;
+  height: 750px;
+}
+
+#comments {
   float: right;
   width: 30%;
 }
+
 textarea, input {
   display: block;
   width: 100%;
   background-color: #FCF5C7;
 }
+
 input {
   height: 36px;
   font-size: 24px;
@@ -27,4 +92,49 @@ input {
 textarea {
   height: 200px;
   font-size: 18px;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-self: center;
+  justify-self: center;
+  border-top:indianred 0.5px solid;
+} 
+
+footer .copyright{
+  opacity: 0.80;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-self: center;
+  width: 100%;
+  margin-bottom: auto;
+  background-color: dodgerblue;
+  flex-wrap: wrap;
+}
+
+.copyright .container{
+  text-align: center;
+  flex-wrap: nowrap;
+}
+
+.copyright .container .newsSource{
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bolder;
+}
+
+.copyright .container .myLink{
+  padding-top: 10px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bolder;
 }
